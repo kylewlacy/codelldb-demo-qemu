@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "sourceLanguages": ["rust"],
+            "name": "Debug (Raspberry Pi 3B+)",
+            "request": "custom",
+            "preLaunchTask": "make raspi3-emu-gdb",
+            "targetCreateCommands": ["target create ${workspaceFolder}/build/raspi3/kernel8.elf"],
+            "processCreateCommands": ["gdb-remote localhost:1234"],
+        }
+    ]
+}

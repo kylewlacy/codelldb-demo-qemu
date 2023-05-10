@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make raspi3",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "raspi3"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "make raspi3-emu-gdb",
+            "type": "process",
+            "isBackground": true,
+            "dependsOn": [
+                "make raspi3"
+            ],
+            "command": "make",
+            "args": [
+                "raspi3-emu-gdb"
+            ],
+            "problemMatcher": [
+                {
+                  "pattern": [
+                    {
+                      "regexp": ".",
+                      "file": 1,
+                      "location": 2,
+                      "message": 3
+                    }
+                  ],
+                  "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": ".",
+                  }
+                }
+            ]
+        }
+    ]
+}

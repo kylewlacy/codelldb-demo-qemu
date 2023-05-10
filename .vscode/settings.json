@@ -1,0 +1,11 @@
+{
+    "debug.allowBreakpointsEverywhere": true,
+    "rust-analyzer.check.allTargets": false,
+    "rust-analyzer.check.targets": [
+        "aarch64-unknown-none"
+    ],
+    "lldb.displayFormat": "auto",
+    "lldb.showDisassembly": "auto",
+    "lldb.dereferencePointers": true,
+    "lldb.consoleMode": "commands"
+}
